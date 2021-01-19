@@ -7,8 +7,9 @@ except ImportError:  # for pip <= 9.0.3
 
 
 install_reqs = parse_requirements('requirements.txt', session=False)
-reqs = [str(ir.req) for ir in install_reqs]
-
+# reqs = [str(ir.req) for ir in install_reqs]
+reqs = []
+reqs = [str(ir.requirement) for ir in install_reqs]
 setuptools.setup(
     name="fast-radiology",
     setup_cfg=True,
